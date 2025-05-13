@@ -190,6 +190,8 @@ void deletegivenpCll()
 		free(temp);
 	}
 }
+
+
 void display()
 {
 	node *temp;
