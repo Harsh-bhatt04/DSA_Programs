@@ -47,12 +47,11 @@ void infixToPostfix(char str[],int n){
             stk[++TOP] = ch;
         }
         }
-        // Pop remaining operators from the stack
+
         while (TOP != -1) {
             res[ri++] = stk[TOP--];
         }
-    
-        // Null-terminate the result string
+
         res[ri] = '\0';
         printf("%s\n", res);
 }
