@@ -5,6 +5,29 @@
 int queue[MAX];
 int front = -1, rear = -1;
 
+void insertFront(){
+    int val;
+    printf("\nEnter the value: ");
+    scanf("%d",&val);
+
+    if(front == 0 && rear == MAX - 1){
+        printf("\nOverflow");
+    }
+    else{
+        if(front == -1){
+            front = 0;
+            rear = 0;
+            queue[front] = val;
+            printf("\nElement is inserted");
+        }
+        else{
+            front--;
+            queue[front] = val;
+            printf("\nElement is inserted");
+        }
+    }
+
+}
 void enqueue() {
     int val;
     if (rear == MAX - 1) {
@@ -50,8 +73,9 @@ int main() {
     while (1) {
         printf("\nPress 1: Enqueue");
         printf("\nPress 2: Dequeue");
-        printf("\nPress 3: Display");
-        printf("\nPress 4: Exit");
+        printf("\nPress 3: front insertion");
+        printf("\nPress 4: Display");
+        printf("\nPress 5: Exit");
         printf("\nEnter the choice: ");
         scanf("%d", &ch);
 
@@ -63,9 +87,12 @@ int main() {
                 dequeue();
                 break;
             case 3:
-                display();
+                insertFront();
                 break;
             case 4:
+                display(0);
+                break;
+            case 5:
                 exit(0);
             default:
                 printf("Wrong choice entered...");
